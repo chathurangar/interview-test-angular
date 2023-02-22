@@ -18,14 +18,16 @@ namespace StudentApi.Services
                 FirstName = "Marty",
                 LastName = "McFly",
                 Email = "back.future@test.com",
-                Major = "History"
+                Major = "History",
+                AverageGrade = 90
             });
 
             students.Add(new Student {
                 FirstName = "Emmett",
                 LastName = "Brown",
                 Email = "dr.brown@test.com",
-                Major = "Physics"
+                Major = "Physics",
+                AverageGrade = 75
             });
 
             students.Add(new Student
@@ -33,7 +35,8 @@ namespace StudentApi.Services
                 FirstName = "Biff",
                 LastName = "Tannen",
                 Email = "biff@test.com",
-                Major = "PE"
+                Major = "PE",
+                AverageGrade = 40
             });
         }
 
@@ -45,7 +48,16 @@ namespace StudentApi.Services
         /// <exception cref="NotImplementedException"></exception>
         public bool AddStudent(Student student)
         {
-            throw new NotImplementedException();
+            students.Add(new Student
+            {
+                FirstName = student.FirstName,
+                LastName = student.LastName,
+                Email = student.LastName,
+                Major = student.Major,
+                AverageGrade = student.AverageGrade
+            });
+
+            return true;
         }
 
         /// <summary>
@@ -56,7 +68,9 @@ namespace StudentApi.Services
         /// <exception cref="NotImplementedException"></exception>
         public bool DeleteStudent(Student student)
         {
-            throw new NotImplementedException();
+            students.RemoveAll(x => x.Email == student.Email);
+
+            return true;
         }
 
         /// <summary>

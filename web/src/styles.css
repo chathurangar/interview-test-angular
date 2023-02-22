@@ -14,3 +14,35 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+.studentform {
+  width: 70%;
+}
+
+.studentform .col-sm-3{
+  margin-top: 10px;
+}
+
+.studentform .col-sm-9{
+  margin-top: 10px;
+}
+
+.addStuDiv{
+  display: flex; justify-content: space-around;
+}
+
+.addStuDiv1 {
+  width: 80%;
+}
+
+.addStuDi2 {
+  width: 20%; margin-top: 10px;
+}
+
+.backBtn {
+  display: flex;
+}
+
+.backBtn a {
+  float: left;
+}

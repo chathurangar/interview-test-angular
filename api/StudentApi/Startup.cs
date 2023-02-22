@@ -29,11 +29,12 @@ namespace StudentApi
             // Register the MediatR request handlers
             services.RegisterRequestHandlers();
 
-            services.AddCors(options => options.AddDefaultPolicy(builder =>
+            //Enable CORS
+            services.AddCors(c =>
             {
-
-                builder.WithOrigins("http://localhost:4200", "http://localhost:8100", "http://localhost");
-            }));
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
+               .AllowAnyHeader());
+            });
 
             services.AddSwaggerGen();
 
@@ -60,7 +61,7 @@ namespace StudentApi
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
                 options.RoutePrefix = string.Empty;
             });
-            app.UseCors();
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

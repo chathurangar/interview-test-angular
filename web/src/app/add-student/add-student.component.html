@@ -1,0 +1,40 @@
+<div class="backBtn">
+    <a routerLink=""><button class="btn btn-success pull-right" > Back</button></a>
+</div>
+
+<br>
+<form #form="ngForm">
+    <div class="form-group row studentform">
+        <label class="col-sm-3 col-form-label">First Name</label>
+        <div class="col-sm-9 inputDiv">
+            <input type="text" id="FirstName" name="FirstName" class="form-control" [(ngModel)]="FirstName">            
+        </div>
+
+        <label class="col-sm-3 col-form-label">Last Name</label>
+        <div class="col-sm-9 inputDiv">
+            <input type="text" id="LastName" name="LastName" class="form-control" [(ngModel)]="LastName">            
+        </div>
+
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9 inputDiv">
+            <input type="email" id="Email" name="Email" class="form-control" [(ngModel)]="Email">            
+        </div>
+
+        <label class="col-sm-3 col-form-label">Major</label>
+        <div class="col-sm-9 inputDiv">
+            <input type="text" id="Major" name="Major" class="form-control" [(ngModel)]="Major">            
+        </div>
+
+        <label class="col-sm-3 col-form-label">Average</label>
+        <div class="col-sm-9 inputDiv">
+            <input type="number" id="Average" name="Average" class="form-control" [(ngModel)]="Average">            
+        </div>
+
+        <div class="col-sm-9" style="margin-left: 25%; margin-top: 10px;">
+            <button (click)="addStudent()" class="btn btn-primary" type="submit">
+                Save
+            </button>
+        </div>
+        
+    </div>
+</form>

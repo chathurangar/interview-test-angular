@@ -1,4 +1,11 @@
-<h1 id="tableLabel">Students</h1>
+<div class="addStuDiv">
+  <div class="addStuDiv1">
+    <h1 id="tableLabel">Students</h1>
+  </div>
+  <div class="addStuDiv2">
+    <a routerLink="/AddStudent"><button class="btn btn-success pull-right" > Add Student</button></a>
+  </div>
+</div>
 
 <p *ngIf="!students"><em>Loading...</em></p>
 
@@ -9,6 +16,8 @@
       <th>Lastname</th>
       <th>Email</th>
       <th>Major</th>
+      <th>Average Grade</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +26,8 @@
       <td>{{ student.lastName }}</td>
       <td>{{ student.email }}</td>
       <td>{{ student.major }}</td>
+      <td [ngStyle]="{'color': getColor(student.averageGrade)}">{{ student.averageGrade }}</td>
+      <td><a><button class="btn btn btn-danger pull-right" (click)="deleteStudent(student)"> Delete</button></a></td>
     </tr>
   </tbody>
 </table>
